@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #88c057, #b4e197);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+    overflow: hidden;
+    animation: boxFadeIn 1.2s ease-in-out;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #2f3e1e;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #4b6543;
+}
+
+input {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #d3e0d5;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #6cbb47;
+    color: white;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5a9e3b;
+}
+
+.hidden {
+    display: none;
+}
+
+#success-message {
+    margin-top: 20px;
+    color: #2f8a20;
+}
+
+@keyframes boxFadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Animated Background Elements */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    left: -150px;
+    width: 300px;
+    height: 300px;
+    background: url('https://image.flaticon.com/icons/svg/4151/4151339.svg') no-repeat center;
+    background-size: cover;
+    opacity: 0.3;
+    animation: leafFloat 6s infinite alternate ease-in-out;
+}
+
+@keyframes leafFloat {
+    from {
+        transform: translateY(0px) rotate(0deg);
+    }
+    to {
+        transform: translateY(50px) rotate(20deg);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="forgot-password-box">
+            <h1>Forgot Password?</h1>
+            <p>Enter your email to reset your password</p>
+            <form id="forgot-password-form">
+                <input type="email" placeholder="Email Address" required>
+                <button type="submit">Send Reset Link</button>
+            </form>
+            <p id="success-message" class="hidden">Check your email for the reset link!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

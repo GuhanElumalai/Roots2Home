@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Roots2Home</title>
+    <style>
+        /* Reset and base styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #e9f7e1; /* Light earthy green */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #5d8233;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            border-bottom: 5px solid #3c5f1f;
+            animation: slideDown 1s ease-out;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            animation: fadeIn 1.2s ease forwards;
+        }
+
+        /* Container for contact form and details */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            max-width: 1200px;
+            width: 90%;
+            margin-top: 40px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1.5s ease forwards 0.5s;
+        }
+
+        /* Left side for the contact form */
+        .contact-form {
+            width: 60%;
+        }
+
+        .contact-form h2 {
+            margin-bottom: 20px;
+            color: #5d8233;
+            font-size: 2rem;
+        }
+
+        .contact-form .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #c7dd91;
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+            background: #f1f8e9;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #5d8233;
+            background-color: white;
+        }
+
+        .contact-form label {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            pointer-events: none;
+            transition: all 0.3s ease;
+            color: #999;
+        }
+
+        .contact-form input:focus + label,
+        .contact-form input:not(:placeholder-shown) + label,
+        .contact-form textarea:focus + label,
+        .contact-form textarea:not(:placeholder-shown) + label {
+            top: -10px;
+            left: 10px;
+            font-size: 0.9rem;
+            color: #5d8233;
+            background-color: white;
+            padding: 0 5px;
+        }
+
+        .contact-form textarea {
+            resize: none;
+            height: 150px;
+        }
+
+        .contact-form button {
+            background-color: #5d8233;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: yellowgreen;
+        }
+
+        /* Right side for location details */
+        .contact-details {
+            width: 35%;
+            background-color: #f1f8e9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transform: scale(0.95);
+            animation: scaleUp 1s ease forwards 1.5s;
+        }
+
+        .contact-details h2 {
+            margin-bottom: 20px;
+            color: #5d8233;
+            font-size: 2rem;
+        }
+
+        .contact-details p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-details .details {
+            margin-top: 20px;
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleUp {
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+
+    <div class="container">
+        <!-- Contact form -->
+        <div class="contact-form">
+            <h2>Get in Touch</h2>
+            <div class="input-group">
+                <input type="text" id="name" name="name" required placeholder=" ">
+                <label for="name">Full Name</label>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" name="email" required placeholder=" ">
+                <label for="email">Email Address</label>
+            </div>
+            <div class="input-group">
+                <textarea id="message" name="message" required placeholder=" "></textarea>
+                <label for="message">Your Message</label>
+            </div>
+            <button type="submit">Submit</button>
+        </div>
+
+        <!-- Contact details -->
+        <div class="contact-details">
+            <h2>Contact Info</h2>
+            <p>Address: 123 Green Valley, Agriculture Road, City</p>
+            <p>Phone: +1 234 567 890</p>
+            <p>Email: info@roots2home.com</p>
+
+            <div class="details">
+                <h2>Our Location</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224346.11665134406!2d77.06889944609799!3d28.52758259818852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1dff4a3c5a7b%3A0x5930f19db618a5c8!2sNew%20Delhi%2C%20Delhi%2C%20India!5e0!3m2!1sen!2sus!4v1693884903523!5m2!1sen!2sus" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        // Custom JavaScript (if needed for future form submission handling)
+        document.querySelector('button').addEventListener('click', function() {
+            alert("Form Submitted! Thank you for reaching out.");
+        });
+    </script>
+
+</body>
+</html>
